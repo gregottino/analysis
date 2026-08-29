@@ -1,9 +1,9 @@
 Universe           = vanilla
 Executable         = plot_mass.sh
-Output          = /sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/mass_histogram_output/MC/logs/massplot_$(Process).out
-Error           = /sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/mass_histogram_output/MC/logs/massplot_$(Process).err
-Log             = /tmp/log_mjpeters/massplot_$(Process).log
-Initialdir      = /sphenix/user/mjpeters/analysis/LightFlavorRatios/mass_histograms/
+Output          = /sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/mass_histogram_output/logs/massplot_$(Process).out
+Error           = /sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/mass_histogram_output/logs/massplot_$(Process).err
+Log             = /tmp/log_gregoryottino/massplot_$(Process).log
+Initialdir      = /sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/analysis/LightFlavorRatios/mass_histograms/
 PeriodicHold    = (NumJobStarts>=1 && JobStatus == 1)
 request_memory     = 2GB
 Priority           = 20
