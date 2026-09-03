@@ -630,7 +630,9 @@ void ResonanceRatio::calculate_ratios_binned(TH1F* integrated_numerator_data, st
 
   for(int i=0; i<_variables.size(); i++)
   {
+    std::cout<<"diff_numerator_data[i].hists.size(): "<<diff_numerator_data[i].hists[i]<<std::endl;
     get_diff_yield_binned(numerator_diff_yields[i],numerator_fit_syserr[i],_variables[i],diff_numerator_data[i],_numerator_model);
+    std::cout<<"test2"<<std::endl;
     get_diff_yield_binned(denominator_diff_yields[i],denominator_fit_syserr[i],_variables[i],diff_denominator_data[i],_denominator_model);
   }
 

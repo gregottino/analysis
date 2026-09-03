@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILEBASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/cutEfficiencyCorrection
+FILEBASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/cut_efficiency
 
 hadd -d . -f -k -j ${FILEBASE}/cut_efficiency.root ${FILEBASE}/cut_efficiency_0*.root 
 hadd -d . -f -k -j ${FILEBASE}/cut_efficiency_pos.root ${FILEBASE}/cut_efficiency_pos_0*.root 

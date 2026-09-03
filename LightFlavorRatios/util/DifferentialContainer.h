@@ -21,6 +21,7 @@ struct DifferentialContainer
     for(int i=0; i<hinfo.bins.size()+2; i++)
     {
       std::string name = massbins_map.at(particle).name + "_vs" + hinfo.name + "_" + std::to_string(i);
+      std::cout<<name<<std::endl;
       std::cout << "importing " << name << std::endl;
       TH1F* h = (TH1F*)f->Get(name.c_str());
       hists.push_back(h);

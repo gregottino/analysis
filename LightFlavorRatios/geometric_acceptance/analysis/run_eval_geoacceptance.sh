@@ -2,7 +2,7 @@
 
 PROCESS=$1
 
-mkdir -p /tmp/log_mjpeters/
+mkdir -p /tmp/log_gregoryottino/
 
 LAMBDA_FLAVOR=3122
 LAMBDABAR_FLAVOR=-3122
@@ -15,10 +15,10 @@ KS_DAUGHTERS=\{211,-211\}
 #LAMBDA_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
 #KS_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
 
-LAMBDA_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/evaluator/outputeval
-KS_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/evaluator/outputeval
+LAMBDA_FILEBASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
+KS_FILEBASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
 
-OUTPUT_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/geometricAcceptanceCorrection
+OUTPUT_FILEBASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance
 
 source /opt/sphenix/core/bin/sphenix_setup.sh -n new
 
@@ -38,8 +38,8 @@ rm ${OUTPUT_FILEBASE}/lambda_only/hists_${SEGMENT}.root
 rm ${OUTPUT_FILEBASE}/lambdabar_only/hists_${SEGMENT}.root
 
 # (Lambda + Lambdabar) / 2Ks
-root -l -b evaluator_geomAccept.C\($LAMBDA_FLAVOR,$LAMBDA_DAUGHTERS,$KS_FLAVOR,$KS_DAUGHTERS,\"\#Lambda\",\"K^{0}_{S}\",\"$LAMBDA_FILEBASE\",\"$KS_FILEBASE\",1.,2.,\"${OUTPUT_FILEBASE}/inclusive_parity/hists\",${PROCESS}\)
+root -l -b -q evaluator_geomAccept.C\($LAMBDA_FLAVOR,$LAMBDA_DAUGHTERS,$KS_FLAVOR,$KS_DAUGHTERS,\"\#Lambda\",\"K^{0}_{S}\",\"$LAMBDA_FILEBASE\",\"$KS_FILEBASE\",1.,2.,\"${OUTPUT_FILEBASE}/inclusive_parity/hists\",${PROCESS}\)
 # Lambda/Ks
-#root -l -b evaluator_geomAccept.C\($LAMBDA_FLAVOR,$LAMBDA_DAUGHTERS,$KS_FLAVOR,$KS_DAUGHTERS,\"\#Lambda\",\"K^{0}_{S}\",\"$LAMBDA_FILEBASE\",\"$KS_FILEBASE\",1.,1.,\"${OUTPUT_FILEBASE}/lambda_only/hists\",${PROCESS},false\)
+root -l -b -q evaluator_geomAccept.C\($LAMBDA_FLAVOR,$LAMBDA_DAUGHTERS,$KS_FLAVOR,$KS_DAUGHTERS,\"\#Lambda\",\"K^{0}_{S}\",\"$LAMBDA_FILEBASE\",\"$KS_FILEBASE\",1.,1.,\"${OUTPUT_FILEBASE}/lambda_only/hists\",${PROCESS},false\)
 #Lambdabar/Ks
-#root -l -b evaluator_geomAccept.C\($LAMBDABAR_FLAVOR,$LAMBDABAR_DAUGHTERS,$KS_FLAVOR,$KS_DAUGHTERS,\"\#Lambda\",\"K^{0}_{S}\",\"$LAMBDA_FILEBASE\",\"$KS_FILEBASE\",1.,1.,\"${OUTPUT_FILEBASE}/lambdabar_only/hists\",${PROCESS},false\)
+root -l -b -q evaluator_geomAccept.C\($LAMBDABAR_FLAVOR,$LAMBDABAR_DAUGHTERS,$KS_FLAVOR,$KS_DAUGHTERS,\"\#Lambda\",\"K^{0}_{S}\",\"$LAMBDA_FILEBASE\",\"$KS_FILEBASE\",1.,1.,\"${OUTPUT_FILEBASE}/lambdabar_only/hists\",${PROCESS},false\)

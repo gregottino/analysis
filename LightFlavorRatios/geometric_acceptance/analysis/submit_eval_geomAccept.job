@@ -1,8 +1,8 @@
 Universe           = vanilla
 Executable         = run_eval_geoacceptance.sh
-Output          = /sphenix/user/mjpeters/analysis/LightFlavorRatios/geometric_acceptance/analysis/log/eval_geoacceptance_$(Process).out
-Error           = /sphenix/user/mjpeters/analysis/LightFlavorRatios/geometric_acceptance/analysis/log/eval_geoacceptance_$(Process).err
-Log             = /tmp/log_mjpeters/eval_geoacceptance_$(Process).log
+Output          = /sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/log/eval_geoacceptance_$(Process).out
+Error           = /sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/log/eval_geoacceptance_$(Process).err
+Log             = /tmp/log_gregoryottino/eval_geoacceptance_$(Process).log
 Initialdir      = .
 PeriodicHold    = (NumJobStarts>=1 && JobStatus == 1)
 request_memory     = 2GB

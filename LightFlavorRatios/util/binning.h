@@ -221,11 +221,11 @@ namespace BinInfo
                                                  
   //static const HistogramInfo final_pt_bins("pT","pT",10,0.2,3.,"pT [GeV/c]");
   // special bins to sync with Tony's tracking efficiency
-  static const HistogramInfo final_pt_bins("pT","pT",{0.6,0.7,0.8,0.9,1.,1.1,1.2,1.3,1.4,1.5,1.8,2.1,2.4,2.7,3.,3.99999},"pT [GeV/c]");
+  static const HistogramInfo final_pt_bins("pT","pT",{0.0,0.5,0.6,0.7,0.8,0.9,1.,1.1,1.2,1.3,1.4,1.5,1.8,2.1,2.4,2.7,3.,3.99999},"pT [GeV/c]");
 //  static const HistogramInfo final_pt_bins("pT","pT",{0.8,1.1,1.4,1.8,2.2,3.,3.9999},"pT [GeV/c]");
-  static const HistogramInfo final_rapidity_bins("rapidity","rapidity",15,-0.8,0.8,"rapidity");
-  static const HistogramInfo final_eta_bins("pseudorapidity","#eta",15,-0.8,0.8,"#eta");
-  static const HistogramInfo final_phi_bins("phi","#phi",15,-M_PI,M_PI,"#phi");
+  static const HistogramInfo final_rapidity_bins("rapidity","rapidity",17,-0.8,0.8,"rapidity");
+  static const HistogramInfo final_eta_bins("pseudorapidity","#eta",17,-1.,1.,"#eta");
+  static const HistogramInfo final_phi_bins("phi","#phi",17,-M_PI,M_PI,"#phi");
   static const HistogramInfo final_ntrack_bins("ntrk","nTracks",makeLogBins(5,1.,20),"number of tracks");
 
   static const HistogramInfo pt_bins("pt","pT",100,0.,1.1,"pT [GeV/c]");
@@ -237,56 +237,56 @@ namespace BinInfo
   const std::string lambda_fiducial_cuts = fiducial_cuts("Lambda0",{final_pt_bins,final_eta_bins,final_phi_bins,final_rapidity_bins});
 
   static const std::map<std::string,HistogramInfo> mass_bins = {
-    {"K_S0", HistogramInfo("K_S0_mass","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
+    {"K_S0", HistogramInfo("K_S0","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts+" && "+Ks_fiducial_cuts)},
     {"phi", HistogramInfo("phi_mass","#phi mass",100,0.95,1.1,"mass [GeV/c^{2}]",
                           "track_1_MVTX_nStates>=2 && track_2_MVTX_nStates>=2 &&"
                           "track_1_PV_DCA_xy<=0.05 && track_2_PV_DCA_xy<=0.05 && "
                           "phi_decayLength<=0.05")},
-    {"Lambda0",HistogramInfo("Lambda0_mass","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
+    {"Lambda0",HistogramInfo("Lambda0","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
                              general_daughter_track_cuts+" && "+lambda_fiducial_cuts)}
   };
 
   static const std::map<std::string,HistogramInfo> mass_bins_pos = {
-    {"K_S0", HistogramInfo("K_S0_mass","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
+    {"K_S0", HistogramInfo("K_S0","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts+" && "+Ks_fiducial_cuts)},
     {"phi", HistogramInfo("phi_mass","#phi mass",100,0.95,1.1,"mass [GeV/c^{2}]",
                           "track_1_MVTX_nStates>=2 && track_2_MVTX_nStates>=2 &&"
                           "track_1_PV_DCA_xy<=0.05 && track_2_PV_DCA_xy<=0.05 && "
                           "phi_decayLength<=0.05")},
-    {"Lambda0",HistogramInfo("Lambda0_mass","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
+    {"Lambda0",HistogramInfo("Lambda0","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
                              "track_1_charge==-1 && track_2_charge==1 && "+general_daughter_track_cuts+" && "+lambda_fiducial_cuts)}
   };
 
   static const std::map<std::string,HistogramInfo> mass_bins_neg = {
-    {"K_S0", HistogramInfo("K_S0_mass","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
+    {"K_S0", HistogramInfo("K_S0","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts+" && "+Ks_fiducial_cuts)},
     {"phi", HistogramInfo("phi_mass","#phi mass",100,0.95,1.1,"mass [GeV/c^{2}]",
                           "track_1_MVTX_nStates>=2 && track_2_MVTX_nStates>=2 &&"
                           "track_1_PV_DCA_xy<=0.05 && track_2_PV_DCA_xy<=0.05 && "
                           "phi_decayLength<=0.05")},
-    {"Lambda0",HistogramInfo("Lambda0_mass","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
+    {"Lambda0",HistogramInfo("Lambda0","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
                              "track_1_charge==1 && track_2_charge==-1 && "+general_daughter_track_cuts+" && "+lambda_fiducial_cuts)}
   };
 
   static const std::map<std::string,HistogramInfo> mass_bins_MC = {
-    {"K_S0", HistogramInfo("K_S0_mass","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
+    {"K_S0", HistogramInfo("K_S0","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts + " && " + Ks_fiducial_cuts + " && " + MC_daughter_selection_cuts + " && " + MC_Ks_cuts)},
-    {"Lambda0",HistogramInfo("Lambda0_mass","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
+    {"Lambda0",HistogramInfo("Lambda0","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts + " && " + lambda_fiducial_cuts + " && " + MC_daughter_selection_cuts + " && " + MC_lambda_cuts)}
   };
 
   static const std::map<std::string,HistogramInfo> mass_bins_MC_pos = {
-    {"K_S0", HistogramInfo("K_S0_mass","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
+    {"K_S0", HistogramInfo("K_S0","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts + " && " + Ks_fiducial_cuts + " && " + MC_daughter_selection_cuts + " && " + MC_Ks_cuts)},
-    {"Lambda0",HistogramInfo("Lambda0_mass","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
+    {"Lambda0",HistogramInfo("Lambda0","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
                            "track_1_charge==-1 && track_2_charge==1 && " + lambda_fiducial_cuts + " && " + general_daughter_track_cuts + " && " + MC_daughter_selection_cuts + " && " + MC_lambda_cuts)}
   };
 
   static const std::map<std::string,HistogramInfo> mass_bins_MC_neg = {
-    {"K_S0", HistogramInfo("K_S0_mass","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
+    {"K_S0", HistogramInfo("K_S0","K^{0}_{S} mass",100,0.43,0.6,"mass [GeV/c^{2}]",
                            general_daughter_track_cuts + " && " + Ks_fiducial_cuts + " && " + MC_daughter_selection_cuts + " && " + MC_Ks_cuts)},
-    {"Lambda0",HistogramInfo("Lambda0_mass","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
+    {"Lambda0",HistogramInfo("Lambda0","#Lambda mass",100,1.1,1.135,"mass [GeV/c^{2}]",
                            "track_1_charge==1 && track_2_charge==-1 && " + lambda_fiducial_cuts + " && " + general_daughter_track_cuts + " && " + MC_daughter_selection_cuts + " && " + MC_lambda_cuts)}
   };
 

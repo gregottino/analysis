@@ -2,7 +2,7 @@
 
 PROCESS=$1
 
-mkdir -p /tmp/log_mjpeters/
+mkdir -p /tmp/log_gregoryottino/
 
 source /opt/sphenix/core/bin/sphenix_setup.sh -n new
 
@@ -26,8 +26,8 @@ KS_DAUGHTERS=\{211,-211\}
 #LAMBDA_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
 #KS_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
 
-LAMBDA_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/evaluator/outputeval
-KS_FILEBASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/evaluator/outputeval
+LAMBDA_FILEBASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
+KS_FILEBASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/evaluator/outputeval
 
 SEGMENT=`printf "%06d" $PROCESS`
 

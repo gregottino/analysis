@@ -292,13 +292,13 @@ void plot_truth_comparison()
   TFile* fdata_pos = TFile::Open("../yield_and_ratios/fits_pos.root");
   TFile* fdata_neg = TFile::Open("../yield_and_ratios/fits_neg.root");
 
-  TFile* fgeo_corr = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/geometricAcceptanceCorrection/corrections/geo_acceptance_inclusive.root");
-  TFile* fgeo_corr_pos = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/geometricAcceptanceCorrection/corrections/geo_acceptance_lambdaonly.root");
-  TFile* fgeo_corr_neg = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/geometricAcceptanceCorrection/corrections/geo_acceptance_lambdabaronly.root");
+  TFile* fgeo_corr = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/geo_acceptance_inclusive.root");
+  TFile* fgeo_corr_pos = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/geo_acceptance_lambdaonly.root");
+  TFile* fgeo_corr_neg = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/geo_acceptance_lambdabaronly.root");
 
-  TFile* fcut_corr = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/cutEfficiencyCorrection/cut_efficiency_correction.root");
-  TFile* fcut_corr_pos = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/cutEfficiencyCorrection/cut_efficiency_correction_pos.root");
-  TFile* fcut_corr_neg = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/cutEfficiencyCorrection/cut_efficiency_correction_neg.root");
+  TFile* fcut_corr = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/cut_efficiency/cut_efficiency_correction.root");
+  TFile* fcut_corr_pos = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/cut_efficiency/cut_efficiency_correction_pos.root");
+  TFile* fcut_corr_neg = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/cut_efficiency/cut_efficiency_correction_neg.root");
 
   std::vector<HistogramInfo> variables = {
     BinInfo::final_pt_bins,

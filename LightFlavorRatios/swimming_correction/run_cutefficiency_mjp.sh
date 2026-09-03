@@ -11,17 +11,17 @@ export MYINSTALL=$SPHENIX/install
 export LD_LIBRARY_PATH=$MYINSTALL/lib:$LD_LIBRARY_PATH
 export ROOT_INCLUDE_PATH=$MYINSTALL/include:$ROOT_INCLUDE_PATH
 
-mkdir -p /tmp/log_mjpeters/
+mkdir -p /tmp/log_gregoryottino/
 
 PROCESS=$1
 
 #LAMBDA_INFILE_BASE=/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/ppi_reco/outputKFParticle_ppi_reco
 #KSHORT_INFILE_BASE=/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/pipi_reco/outputKFParticle_pipi_reco
 
-LAMBDA_INFILE_BASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/ppi_reco/outputKFParticle_ppi_reco
-KSHORT_INFILE_BASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/pipi_reco/outputKFParticle_pipi_reco
+LAMBDA_INFILE_BASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/ppi_reco/outputKFParticle_ppi_reco
+KSHORT_INFILE_BASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/pipi_reco/outputKFParticle_pipi_reco
 
-OUTFILE_BASE=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/cutEfficiencyCorrection/cut_efficiency
+OUTFILE_BASE=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/cut_efficiency/cut_efficiency
 
 LAMBDA_PDGID=3122
 LAMBDA_DAUGHTERS={-211,2212}
