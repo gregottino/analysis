@@ -1,3 +1,4 @@
+
 #include "../corrections/EfficiencyCorrection.h"
 #include "../corrections/TrivialLambdaFeedDownCorrection.h"
 #include "../corrections/LambdaFeedDownCorrection.h"
@@ -14,8 +15,8 @@
 
 void Lambda_Kshort_ratio_MC_neg()
 {
-  TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/merged_lambda_MC_neg.root");
-  TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/merged_Kshort_MC.root");
+  TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/mass_histogram_output/merged/merged_lambda_MC_neg.root");
+  TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/mass_histogram_output/merged/merged_Kshort_MC_neg.root");
 
   //TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/ppi_reco/merged_lambda.root");
   //TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/pipi_reco/merged_kshort.root");
@@ -35,8 +36,11 @@ void Lambda_Kshort_ratio_MC_neg()
   //TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorResults/Kshort_3runs.root");
   //TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorResults/Lambda_3runs.root");
 
-  TH1F* integrated_lambda_mass = (TH1F*)lambda_file->Get("Lambda0_mass");
-  TH1F* integrated_kshort_mass = (TH1F*)Ks_file->Get("K_S0_mass");
+  //TTree* Ks_tree = (TTree*)Ks_file->Get("DecayTree");
+  //TTree* lambda_tree = (TTree*)lambda_file->Get("DecayTree");
+
+  TH1F* integrated_lambda_mass = (TH1F*)lambda_file->Get("Lambda0");
+  TH1F* integrated_kshort_mass = (TH1F*)Ks_file->Get("K_S0");
 
   std::vector<HistogramInfo> diff_variables =
   {
@@ -62,8 +66,8 @@ void Lambda_Kshort_ratio_MC_neg()
   CutSettings Lambda_cuts = StandardCuts::MC_Lambda0_neg_cuts;
 
   std::string fd_filename = "/sphenix/tg/tg01/hf/hjheng/HF-analysis/simulation/Pythia_ppMinBias/cascade_feeddown/Cascade_feeddown_fraction.root";
-  std::string geoacc_filename = "/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/geometricAcceptanceCorrection/corrections/geo_acceptance_lambdabaronly.root";
-  std::string cuteff_filename = "/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/cutEfficiencyCorrection/cut_efficiency_correction_neg.root";
+  std::string geoacc_filename = "/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/geo_acceptance_lambdabaronly.root";
+  std::string cuteff_filename = "/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/cut_efficiency/cut_efficiency_correction_neg.root";
   std::vector<std::vector<std::shared_ptr<CorrectionHistogram1D>>> corrections(diff_variables.size());
   // pT
   corrections[0].push_back(std::make_shared<TrivialLambdaFeedDownCorrection>(fd_filename,"h_feeddown_frac_xi_all"));

@@ -14,8 +14,8 @@
 
 void Lambda_Kshort_ratio_MC()
 {
-  TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/merged_samples/merged_lambda_MC.root");
-  TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/merged_samples/merged_Kshort_MC.root");
+  TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/mass_histogram_output/merged/merged_lambda_MC.root");
+  TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/kfp_production_sim/mass_histogram_output/merged/merged_Kshort_MC.root");
 
   //TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/ppi_reco/merged_lambda.root");
   //TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/lambdaKshortMB/lambdaKshort_20260422_DetroitMB_CR_2_mode_pTref_1p4/pipi_reco/merged_kshort.root");
@@ -35,8 +35,11 @@ void Lambda_Kshort_ratio_MC()
   //TFile* Ks_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorResults/Kshort_3runs.root");
   //TFile* lambda_file = TFile::Open("/sphenix/tg/tg01/hf/mjpeters/LightFlavorResults/Lambda_3runs.root");
 
-  TH1F* integrated_lambda_mass = (TH1F*)lambda_file->Get("Lambda0_mass");
-  TH1F* integrated_kshort_mass = (TH1F*)Ks_file->Get("K_S0_mass");
+  //TTree* Ks_tree = (TTree*)Ks_file->Get("DecayTree");
+  //TTree* lambda_tree = (TTree*)lambda_file->Get("DecayTree");
+
+  TH1F* integrated_lambda_mass = (TH1F*)lambda_file->Get("Lambda0");
+  TH1F* integrated_kshort_mass = (TH1F*)Ks_file->Get("K_S0");
 
   std::vector<HistogramInfo> diff_variables =
   {
@@ -109,6 +112,7 @@ void Lambda_Kshort_ratio_MC()
                           Lambda_massbins,Ks_massbins,Lambda_cuts,Ks_cuts,
                           fout,"lambdaKsratio","(#Lambda^{0}+#bar{#Lambda^{0}})/2K_{S}^{0} ratio",1./2.,false,
                           diff_variables,corrections);
+  std::cout<<"test2"<<std::endl;
 
   analyzer.calculate_ratios_binned(integrated_lambda_mass,diff_lambda_data,integrated_kshort_mass,diff_ks_data);
 }

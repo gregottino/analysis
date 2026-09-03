@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BASEDIR=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/geometricAcceptance
 OUTDIR=/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/geometricAcceptanceCorrection
+BASEDIR=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance
 
 hadd -d . -f -k -j ${BASEDIR}/merged_inclusive_parity.root ${BASEDIR}/Lambda0_geo_acceptance_0*.root &
 hadd -d . -f -k -j ${BASEDIR}/merged_lambda_only.root ${BASEDIR}/Lambda0_geo_acceptance_pos_*.root &
