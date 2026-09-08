@@ -7,11 +7,11 @@ export LOGNAME=${USER}
 export HOME=/sphenix/u/${LOGNAME}
 
 export SPHENIX=${HOME}
-export MYINSTALL=$SPHENIX/install
+export MYINSTALL=/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/analysis/LightFlavorRatios/geometric_acceptance/ResonanceGeometricAcceptance/install/
 export LD_LIBRARY_PATH=$MYINSTALL/lib:$LD_LIBRARY_PATH
 export ROOT_INCLUDE_PATH=$MYINSTALL/include:$ROOT_INCLUDE_PATH
 
-#source /opt/sphenix/core/bin/setup_local.sh $MYINSTALL
+source /opt/sphenix/core/bin/setup_local.sh $MYINSTALL
 
 root -l -q -b Fun4All_HFG_GeometricAcceptance.C\(\"$1\"\)
 

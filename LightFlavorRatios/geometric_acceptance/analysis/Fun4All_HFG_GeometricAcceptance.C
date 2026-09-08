@@ -54,7 +54,7 @@ int Fun4All_HFG_GeometricAcceptance(std::string processID = "000000")
   std::string infile = "/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/DST/lambdaKshort_DST_"+processID+".root";
 
   //std::string outDir = "./";
-  std::string outDir = "/sphenix/tg/tg01/hf/mjpeters/LightFlavorProduction/closureTestSample/";
+  std::string outDir = "/sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/";
 
   std::string makeDirectory = "mkdir -p " + outDir + "geometricAcceptance";
   system(makeDirectory.c_str());

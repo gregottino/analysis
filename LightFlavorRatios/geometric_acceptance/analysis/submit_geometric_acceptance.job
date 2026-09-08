@@ -5,8 +5,8 @@ PeriodicHold       = (NumJobStarts>=1 && JobStatus == 1)
 request_memory     = 8GB
 Priority           = 20
 job_lease_duration = 3600
-logHeader          = /tmp/log_mjpeters/geometric_acceptance_$INT(Process,%06d)
-outHeader          = $(initialDir)/log/geometric_acceptance_$INT(Process,%06d)
+logHeader          = /tmp/log_gregoryottino/geometric_acceptance_$INT(Process,%06d)
+outHeader          = /sphenix/tg/tg01/hf/gregoryottino/lightFlavorMultRatio/local_corrections/geometric_acceptance/log/geometric_acceptance_$INT(Process,%06d)
 Output             = $(outHeader).out
 Error              = $(outHeader).err
 Log                = $(logHeader).log
