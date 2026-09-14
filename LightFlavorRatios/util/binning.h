@@ -222,11 +222,11 @@ namespace BinInfo
                                                  
   //static const HistogramInfo final_pt_bins("pT","pT",10,0.2,3.,"pT [GeV/c]");
   // special bins to sync with Tony's tracking efficiency
-  static const HistogramInfo final_pt_bins("pT","pT",{0.0,0.5,0.6,0.7,0.8,0.9,1.,1.1,1.2,1.3,1.4,1.5,1.8,2.1,2.4,2.7,3.,3.99999},"pT [GeV/c]");
+  static const HistogramInfo final_pt_bins("pT","pT",{0.6,0.7,0.8,0.9,1.,1.1,1.2,1.3,1.4,1.5,1.8,2.1,2.4,2.7,3.,3.99999},"pT [GeV/c]");
 //  static const HistogramInfo final_pt_bins("pT","pT",{0.8,1.1,1.4,1.8,2.2,3.,3.9999},"pT [GeV/c]");
-  static const HistogramInfo final_rapidity_bins("rapidity","rapidity",17,-0.8,0.8,"rapidity");
-  static const HistogramInfo final_eta_bins("pseudorapidity","#eta",17,-1.,1.,"#eta");
-  static const HistogramInfo final_phi_bins("phi","#phi",17,-M_PI,M_PI,"#phi");
+  static const HistogramInfo final_rapidity_bins("rapidity","rapidity",15,-0.8,0.8,"rapidity");
+  static const HistogramInfo final_eta_bins("pseudorapidity","#eta",15,-1.,1.,"#eta");
+  static const HistogramInfo final_phi_bins("phi","#phi",15,-M_PI,M_PI,"#phi");
   static const HistogramInfo final_ntrack_bins("ntrk","nTracks",makeLogBins(5,1.,20),"number of tracks");
 
   static const HistogramInfo pt_bins("pt","pT",100,0.,1.1,"pT [GeV/c]");
